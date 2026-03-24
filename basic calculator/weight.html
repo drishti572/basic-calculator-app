@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weight Converter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>KG to Pounds</h2>
+
+<input id="kg" placeholder="Kilograms">
+
+<br><br>
+
+<button onclick="convert()">Convert</button>
+
+<h3 id="result"></h3>
+
+<script>
+
+function convert(){
+
+let kgv=kg.value
+let pound=kgv*2.20462
+
+result.innerHTML="Pounds = "+pound
+
+}
+
+</script>
+
+</body>
+</html>

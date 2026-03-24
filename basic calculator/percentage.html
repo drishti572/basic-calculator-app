@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Percentage Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Percentage Calculator</h2>
+
+<input id="part" placeholder="Part value">
+<input id="total" placeholder="Total value">
+
+<br><br>
+
+<button onclick="calc()">Calculate</button>
+
+<h3 id="result"></h3>
+
+<script>
+
+function calc(){
+let p=part.value
+let t=total.value
+
+let per=(p/t)*100
+
+result.innerHTML="Percentage = "+per+"%"
+}
+
+</script>
+
+</body>
+</html>
