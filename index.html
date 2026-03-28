@@ -2,16 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculator Hub</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<!-- 🌌 Stars -->
 <div class="stars"></div>
+
+<!-- 🍔 NAVBAR -->
+<nav class="navbar">
+  <h2>🧮 Calculator Hub</h2>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <ul id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="bmi.html">BMI</a></li>
+    <li><a href="percentage.html">Percentage</a></li>
+    <li><a href="temperature.html">Temperature</a></li>
+    <li><a href="length.html">Length</a></li>
+    <li><a href="weight.html">Weight</a></li>
+    <li><a href="time.html">Time</a></li>
+  </ul>
+</nav>
+
 <h1>✨ Calculator Hub</h1>
 
 <button class="toggle-btn" onclick="toggleTheme()">🌙 Toggle Theme</button>
 
+<!-- 🔘 QUICK ACCESS -->
 <div class="container">
 <a href="bmi.html"><button>BMI</button></a>
 <a href="percentage.html"><button>Percentage</button></a>
@@ -21,6 +43,7 @@
 <a href="time.html"><button>Time</button></a>
 </div>
 
+<!-- 🧮 CALCULATOR -->
 <div class="calculator">
 
 <input type="text" id="display" disabled>
@@ -52,12 +75,19 @@
 
 </div>
 
+<!-- 📜 HISTORY -->
 <div class="history">
 <h3>📜 History</h3>
 <ul id="historyList"></ul>
 </div>
 
+<!-- 🔊 SOUND -->
 <audio id="clickSound" src="https://www.soundjay.com/buttons/button-16.mp3"></audio>
+
+<!-- 🧾 FOOTER -->
+<footer>
+<p>✨ Made by Drishti Juyal | Calculator Hub</p>
+</footer>
 
 <script src="script.js"></script>
 
