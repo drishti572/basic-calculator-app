@@ -12,9 +12,10 @@ body{
     background: linear-gradient(135deg,#667eea,#764ba2);
     text-align:center;
     color:white;
+    padding-top:10px;
 }
 
-/* DARK MODE */
+/* 🌙 DARK MODE */
 .dark{
     background: linear-gradient(135deg,#1e1e2f,#121212);
 }
@@ -63,12 +64,18 @@ body{
     align-items:center;
     padding:12px 20px;
     background:rgba(0,0,0,0.6);
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
     position:sticky;
     top:0;
     z-index:1000;
+    box-shadow:0 4px 20px rgba(0,0,0,0.3);
 }
 
+.navbar h2{
+    font-weight:600;
+}
+
+/* NAV LINKS */
 .navbar ul{
     list-style:none;
     display:flex;
@@ -78,23 +85,45 @@ body{
 .navbar a{
     text-decoration:none;
     color:white;
-    padding:6px 10px;
+    padding:6px 12px;
     border-radius:10px;
+    position:relative;
+}
+
+/* Hover underline animation */
+.navbar a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0%;
+    height:2px;
+    background:#00ffcc;
+    transition:0.3s;
+}
+
+.navbar a:hover::after{
+    width:100%;
 }
 
 .navbar a:hover{
-    background:#00ffcc;
-    color:black;
+    color:#00ffcc;
 }
 
-/* HAMBURGER */
+/* 🍔 HAMBURGER */
 .hamburger{
     display:none;
-    font-size:26px;
+    font-size:28px;
     cursor:pointer;
+    transition:0.3s;
 }
 
-/* MOBILE */
+/* Rotate animation */
+.hamburger.active{
+    transform:rotate(90deg);
+}
+
+/* 📱 MOBILE NAV */
 @media(max-width:768px){
 
     .hamburger{
@@ -105,25 +134,30 @@ body{
         position:absolute;
         top:60px;
         right:0;
-        background:rgba(0,0,0,0.9);
-        width:200px;
+        background:rgba(0,0,0,0.95);
+        width:220px;
         flex-direction:column;
-        display:none;
         text-align:center;
-        padding:10px 0;
-        border-radius:10px;
+        padding:15px 0;
+        border-radius:12px;
+
+        opacity:0;
+        transform:translateY(-10px);
+        pointer-events:none;
     }
 
     .navbar ul.show{
-        display:flex;
+        opacity:1;
+        transform:translateY(0);
+        pointer-events:auto;
     }
 
     .navbar ul li{
-        margin:10px 0;
+        margin:12px 0;
     }
 }
 
-/* HEADING */
+/* ✨ HEADING */
 h1{
     margin-top:20px;
     animation: glow 2s infinite alternate;
@@ -131,24 +165,31 @@ h1{
 
 @keyframes glow{
     from{ text-shadow: 0 0 10px #fff; }
-    to{ text-shadow: 0 0 20px #00ffcc; }
+    to{ text-shadow: 0 0 25px #00ffcc; }
 }
 
-/* TOGGLE */
+/* 🌙 TOGGLE BUTTON */
 .toggle-btn{
     margin:10px;
-    padding:10px 15px;
+    padding:10px 18px;
     border:none;
     border-radius:20px;
     cursor:pointer;
+    background:white;
+    color:black;
+    font-weight:500;
 }
 
-/* BUTTON LINKS */
+.toggle-btn:hover{
+    background:#00ffcc;
+}
+
+/* 🔘 NAV BUTTONS */
 .container{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:10px;
+    gap:12px;
     margin:20px;
 }
 
@@ -164,17 +205,19 @@ h1{
 .container button:hover{
     background:white;
     color:black;
+    transform:scale(1.05);
+    box-shadow:0 0 10px white;
 }
 
-/* CALCULATOR */
+/* 🧮 CALCULATOR */
 .calculator{
     width:300px;
     margin:30px auto;
     padding:20px;
     border-radius:15px;
     background:rgba(0,0,0,0.6);
-    backdrop-filter:blur(10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    backdrop-filter:blur(12px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 /* DISPLAY */
@@ -190,7 +233,7 @@ h1{
     color:#00ffcc;
 }
 
-/* BUTTONS */
+/* BUTTON GRID */
 .buttons{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -198,6 +241,7 @@ h1{
     margin-top:10px;
 }
 
+/* BUTTON STYLE */
 .buttons button{
     padding:15px;
     border:none;
@@ -205,12 +249,14 @@ h1{
     background:#333;
     color:white;
     cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
 .buttons button:hover{
     background:#00ffcc;
     color:black;
     transform:scale(1.05);
+    box-shadow:0 0 15px #00ffcc;
 }
 
 .buttons button:active{
@@ -221,7 +267,7 @@ h1{
     grid-column:span 2;
 }
 
-/* HISTORY */
+/* 📜 HISTORY */
 .history{
     margin-top:20px;
 }
@@ -229,26 +275,35 @@ h1{
 .history li{
     background:rgba(255,255,255,0.2);
     margin:5px auto;
-    padding:5px;
+    padding:6px;
     width:220px;
     border-radius:10px;
 }
 
-/* INPUT */
+/* 🔤 INPUT */
 input{
     padding:10px;
     border-radius:10px;
     border:none;
     margin:5px;
     width:220px;
+    outline:none;
 }
 
 /* RESULT */
 h3{
     color:#00ffcc;
+    margin-top:10px;
 }
 
-/* FOOTER */
+/* 📱 RESPONSIVE FIX */
+@media(max-width:400px){
+    .calculator{
+        width:90%;
+    }
+}
+
+/* 🧾 FOOTER */
 footer{
     margin-top:20px;
     font-size:14px;
